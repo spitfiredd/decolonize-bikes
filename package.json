@@ -13,6 +13,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "api-start-win": ".venv/Scripts/flask run --no-debugger",
+    "api-routes-win": ".venv/Scripts/flask routes",
+    "api-start": ".venv/bin/flask run --no-debugger",
+    "api-routes": ".venv/bin/flask routes",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -30,5 +34,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
