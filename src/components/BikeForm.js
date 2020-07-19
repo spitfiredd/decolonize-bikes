@@ -56,18 +56,20 @@ class BikeForm extends Component {
         <h3>Bike Intake Form</h3>
         
         <form onSubmit={this.onSubmit}>
+          <label >Bike</label> <br />
           <input
             type="text"
             name="name"
             value={ name }
             onChange={ this.onChange }
-          />
+          /> <br />
+          <label >Color</label> <br />
           <input
             type="test"
             name="color"
             value={ color }
             onChange={ this.onChange }
-          />
+          /> <br />
           <button type="submit">Submit</button>
         </form>
       

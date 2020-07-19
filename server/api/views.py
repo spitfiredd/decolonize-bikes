@@ -24,7 +24,6 @@ class BikeListResource(Resource):
         return bikes_schema.dump(bikes)
 
     def post(self):
-        print(request.json)
         data = request.json
         new_bike = Bike.create(**data)
         new_bike.save()
@@ -37,8 +36,16 @@ class BikeResource(Resource):
         bike = Bike.query.get_or_404(bike_id)
         return bike_schema.dump(bike)
 
-    def post(self):
-        pass
+    def patch(self, bike_id):
+        bike = Bike.query.get_or_404(bike_id)
+        data = request.json
+        bike.update(**data)
+        return bike_schema.dump(bike)
+
+    def delete(self, bike_id):
+        bike = Bike.query.get_or_404(bike_id)
+        bike.delete()
+        return bike_schema.dump(bike), 204
 
 
 api_v1.add_resource(BikeListResource, '/bikes')
